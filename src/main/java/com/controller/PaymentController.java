@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import com.entities.PaymentEntity;
 import com.exceptions.PaymentNotFoundException;
 import com.services.IPaymentService;
-import com.services.PaymentServiceImpl;
 
 @RestController
 @RequestMapping("/onlinesportshopee")

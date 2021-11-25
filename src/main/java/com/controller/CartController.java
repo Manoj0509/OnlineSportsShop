@@ -9,13 +9,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import com.entities.CartEntity;
-import com.entities.CustomerEntity;
 import com.exceptions.CartException;
-import com.exceptions.CustomerNotFoundException;
 import com.services.ICartService;
 
  
-@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/onlinesportshopee")
 public class CartController {

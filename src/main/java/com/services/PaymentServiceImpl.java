@@ -6,9 +6,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dao.IPaymentRepository;
 import com.entities.PaymentEntity;
 import com.exceptions.PaymentNotFoundException;
+import com.repository.IPaymentRepository;
 
 @Service
 public class PaymentServiceImpl implements IPaymentService{

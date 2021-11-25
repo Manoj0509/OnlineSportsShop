@@ -24,7 +24,7 @@
         </encoder>
     </appender>
 
-    <logger name="com.CoderController" level="trace" additivity="false">
+    <logger name="com.CustomerController" level="trace" additivity="false">
         <appender-ref ref="FILE-ROLLING"/>
     </logger>
 
@@ -40,7 +40,7 @@
         </layout>
     </appender>
 
-    <logger name="com.CoderController" level="trace" additivity="false">
+    <logger name="com.CustomerController" level="trace" additivity="false">
         <appender-ref ref="CONSOLE"/>
     </logger>
 

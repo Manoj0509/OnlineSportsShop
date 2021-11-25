@@ -3,9 +3,7 @@ package com.services;
 import java.util.List;
 
 import com.entities.CustomerEntity;
-import com.entities.UserEntity;
 import com.exceptions.CustomerNotFoundException;
-import com.exceptions.UserException;
 
 public interface ICustomerService {
 

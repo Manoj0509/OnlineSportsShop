@@ -24,6 +24,7 @@ public class CustomerEntity
 	private String contactNo;
 	@Column(name = "DateOfBirth")
 	private LocalDate doB;
+	
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<AddressEntity> addressEntity;
 

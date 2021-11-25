@@ -14,7 +14,6 @@ import com.exceptions.ProductNotFoundException;
 import com.services.IProductService;
 
 
-@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/onlinesportshopee")
 public class ProductController {

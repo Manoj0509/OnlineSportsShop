@@ -7,7 +7,7 @@ import com.exceptions.OrderNotFoundException;
 import java.util.List;
 
 public interface IOrderService {
-public OrderEntity addOrder(Long cartID) throws OrderNotFoundException,InvalidOrderIdException;
+public OrderEntity addOrder(Long custID) throws OrderNotFoundException,InvalidOrderIdException;
 public OrderEntity updateOrder(Long id,OrderEntity order)throws OrderNotFoundException,InvalidOrderIdException;
 public OrderEntity removeOrder(Long id) throws InvalidOrderIdException, OrderNotFoundException;
 public List<OrderEntity> getAllOrders();

@@ -4,11 +4,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dao.ICustomerRepository;
 import com.entities.CustomerEntity;
-import com.entities.UserEntity;
 import com.exceptions.CustomerNotFoundException;
-import com.exceptions.UserException;
+import com.repository.ICustomerRepository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

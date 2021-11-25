@@ -6,7 +6,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,16 +15,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.entities.CartEntity;
 import com.entities.OrderEntity;
-import com.exceptions.CartException;
 import com.exceptions.InvalidOrderIdException;
 import com.exceptions.OrderNotFoundException;
 import com.services.IOrderService;
-import com.services.OrderServiceImpl;
 
  
-@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/onlinesportshopee")
 public class OrderController {
@@ -35,11 +30,11 @@ public class OrderController {
     @Autowired
     private IOrderService iOrderService;
     
-    @PostMapping("/add-order/{custID}")
-    public  ResponseEntity<OrderEntity> addOrder(@PathVariable Long custID)throws OrderNotFoundException,InvalidOrderIdException{
+    @PostMapping("/add-order/{custId}")
+    public  ResponseEntity<OrderEntity> addOrder(@PathVariable Long custId)throws OrderNotFoundException,InvalidOrderIdException{
         LOGGER.info("add-order URL is opened");
         LOGGER.info("addOrderEntity() is initiated");
-        OrderEntity orderDTO = iOrderService.addOrder(custID);
+        OrderEntity orderDTO = iOrderService.addOrder(custId);
         LOGGER.info("addOrder() has executed");
         return new ResponseEntity<OrderEntity>(orderDTO, HttpStatus.ACCEPTED);
     }

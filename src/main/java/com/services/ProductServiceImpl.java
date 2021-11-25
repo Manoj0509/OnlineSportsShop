@@ -7,9 +7,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dao.IProductRepository;
 import com.entities.ProductEntity;
 import com.exceptions.ProductNotFoundException;
+import com.repository.IProductRepository;
 
 
 @Service

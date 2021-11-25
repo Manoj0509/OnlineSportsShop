@@ -11,7 +11,6 @@ import com.exceptions.UserException;
 import com.services.IUserService;
 
  
-@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/onlinesportshopee")
 public class UserController {

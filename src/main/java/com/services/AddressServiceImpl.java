@@ -4,10 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
 
-import com.dao.IAddressRepository;
 import com.entities.AddressEntity;
 import com.exceptions.AddressNotFoundException;
-
+import com.repository.IAddressRepository;
 
 import java.util.List;
 

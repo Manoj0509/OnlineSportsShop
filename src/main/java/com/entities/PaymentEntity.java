@@ -16,6 +16,7 @@ public class PaymentEntity {
 	private String type;
 	@Column(name = "status")
 	private String status;
+	
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<CardEntity> cardEntity;
 

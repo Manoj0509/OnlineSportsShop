@@ -6,9 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.controller.UserController;
-import com.dao.IUserRepository;
 import com.entities.UserEntity;
 import com.exceptions.UserException;
+import com.repository.IUserRepository;
 
 @Service
 public class UserServiceImpl implements IUserService {

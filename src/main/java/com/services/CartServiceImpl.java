@@ -7,11 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.controller.CartController;
-import com.dao.ICartRepository;
-import com.dao.IProductRepository;
 import com.entities.CartEntity;
 import com.entities.ProductEntity;
 import com.exceptions.CartException;
+import com.repository.ICartRepository;
+import com.repository.IProductRepository;
 
 @Service
 public class CartServiceImpl implements ICartService {

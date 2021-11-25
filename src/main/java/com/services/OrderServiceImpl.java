@@ -9,11 +9,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dao.ICartRepository;
-import com.dao.IOrderRepository;
 import com.entities.CartEntity;
 import com.entities.OrderEntity;
 import com.exceptions.OrderNotFoundException;
+import com.repository.ICartRepository;
+import com.repository.IOrderRepository;
 
 
 @Service
