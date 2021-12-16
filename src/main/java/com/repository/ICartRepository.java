@@ -1,4 +1,4 @@
-package com.dao;
+package com.repository;
 
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -8,12 +8,12 @@ import org.springframework.stereotype.*;
 import com.entities.CartEntity;
 
 @Repository
-public interface ICartRepository extends JpaRepository<CartEntity,Long>{
-	
-	@Query(value = "SELECT * FROM cart c WHERE c.cust_id = ?1",nativeQuery = true)
+public interface ICartRepository extends JpaRepository<CartEntity, Long> {
+
+	@Query(value = "SELECT * FROM cart c WHERE c.cust_id = ?1", nativeQuery = true)
 	List<CartEntity> findByCustId(Long custId);
-	
-	@Query(value = "DELETE FROM cart c WHERE c.cust_id = ?1",nativeQuery = true)
+
+	@Query(value = "DELETE FROM cart c WHERE c.cust_id = ?1", nativeQuery = true)
 	List<CartEntity> deleteByCustId(Long custId);
 
 }

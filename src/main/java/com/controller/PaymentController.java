@@ -11,63 +11,60 @@ import org.springframework.web.bind.annotation.*;
 import com.entities.PaymentEntity;
 import com.exceptions.PaymentNotFoundException;
 import com.services.IPaymentService;
-import com.services.PaymentServiceImpl;
 
 @RestController
 @RequestMapping("/onlinesportshopee")
 
 public class PaymentController {
-	
+
 	static final Logger LOGGER = LoggerFactory.getLogger(PaymentController.class);
-	
+
 	@Autowired
 	private IPaymentService iPaymentService;
-	
+
 	@PostMapping("/payments/addPayment")
-	public ResponseEntity<PaymentEntity> addPayment(@RequestBody PaymentEntity payment)
-	{
+	public ResponseEntity<PaymentEntity> addPayment(@RequestBody PaymentEntity payment) {
 		LOGGER.info("add-payment URL is opened");
 		LOGGER.info("addpayment() is initiated");
 		PaymentEntity paymentDTO = iPaymentService.addPayment(payment);
 		LOGGER.info("addpayment() has executed");
-		return new ResponseEntity<PaymentEntity>(paymentDTO, HttpStatus.ACCEPTED); 
+		return new ResponseEntity<PaymentEntity>(paymentDTO, HttpStatus.ACCEPTED);
 	}
-	
+
 	@DeleteMapping("/payments/removePayment/payment/{paymentId}")
-	public ResponseEntity<PaymentEntity> removePayment(@PathVariable long paymentId) throws PaymentNotFoundException
-	{
+	public ResponseEntity<PaymentEntity> removePayment(@PathVariable long paymentId) throws PaymentNotFoundException {
 		LOGGER.info("delete-payment URL is opened");
 		LOGGER.info("deletePayment() is initiated");
 		PaymentEntity paymentDTO = iPaymentService.removePayment(paymentId);
 		LOGGER.info("deletePayment() has executed");
 		return new ResponseEntity<PaymentEntity>(paymentDTO, HttpStatus.ACCEPTED);
-		}
-	
+	}
+
 	@PutMapping("/payments/updatePayment/{paymentId}")
-	public ResponseEntity<PaymentEntity> updatePayment(@PathVariable Long paymentId, @RequestBody PaymentEntity payment)  throws PaymentNotFoundException
-	{
+	public ResponseEntity<PaymentEntity> updatePayment(@PathVariable Long paymentId, @RequestBody PaymentEntity payment)
+			throws PaymentNotFoundException {
 		LOGGER.info("update-payment URL is opened");
 		LOGGER.info("updatePayment() is initiated");
-		PaymentEntity paymentDTO = iPaymentService.updatePayment(paymentId,payment);
+		PaymentEntity paymentDTO = iPaymentService.updatePayment(paymentId, payment);
 		LOGGER.info("updatePayment() has executed");
 		return new ResponseEntity<PaymentEntity>(paymentDTO, HttpStatus.ACCEPTED);
 	}
-	
+
 	@GetMapping("/payments/getPaymentDetails/{paymentId}")
-	public ResponseEntity<PaymentEntity> getPaymentDetails(@PathVariable long paymentId) throws PaymentNotFoundException
-	{
+	public ResponseEntity<PaymentEntity> getPaymentDetails(@PathVariable long paymentId)
+			throws PaymentNotFoundException {
 		LOGGER.info("getPaymentDetails URL is opened");
 		LOGGER.info("getPaymentDetails() is initiated");
-		PaymentEntity paymentDTO = iPaymentService.getPaymentDetails(paymentId); 
+		PaymentEntity paymentDTO = iPaymentService.getPaymentDetails(paymentId);
 		LOGGER.info("getPaymentDetails() has executed");
 		return new ResponseEntity<PaymentEntity>(paymentDTO, HttpStatus.ACCEPTED);
-		}
+	}
+
 	@GetMapping("/payments/getallpayment")
-	public List<PaymentEntity> getAllPaymentDetails()
-	{
+	public List<PaymentEntity> getAllPaymentDetails() {
 		LOGGER.info("getPaymentbyname URL is opened");
 		LOGGER.info("getPaymentbyname() is initiated");
-		return iPaymentService.getAllPaymentDetails(); 		
+		return iPaymentService.getAllPaymentDetails();
 	}
-	
+
 }

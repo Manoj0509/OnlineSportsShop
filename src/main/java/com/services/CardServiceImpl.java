@@ -6,22 +6,21 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.dao.ICardRepository;
 import com.entities.CardEntity;
-
+import com.repository.ICardRepository;
 
 @Service
-public class CardServiceImpl implements ICardService{
-	
+public class CardServiceImpl implements ICardService {
+
 	static final Logger LOGGER = LoggerFactory.getLogger(CardServiceImpl.class);
-	
+
 	static String cardNotFound = "No card found in given Id";
-	
+
 	static String validateSuccessful = "Validation Successful";
-	
+
 	@Autowired
 	private ICardRepository cardRepository;
-	
+
 	@Override
 	public CardEntity addCard(CardEntity card) {
 		LOGGER.info("addCard() service is initiated");
@@ -33,10 +32,10 @@ public class CardServiceImpl implements ICardService{
 	@Override
 	public CardEntity removeCard(Long id) {
 		LOGGER.info("removeCard() service is initiated");
-	    CardEntity deleteCard = cardRepository.findById(id).get();
-	    cardRepository.delete(deleteCard);
-	    LOGGER.info("removeCard() service has executed");
-	    return deleteCard;
+		CardEntity deleteCard = cardRepository.findById(id).get();
+		cardRepository.delete(deleteCard);
+		LOGGER.info("removeCard() service has executed");
+		return deleteCard;
 	}
 
 	@Override
@@ -62,6 +61,6 @@ public class CardServiceImpl implements ICardService{
 		List<CardEntity> getAllCards = cardRepository.findAll();
 		LOGGER.info("getAllCards() service has executed");
 		return getAllCards;
-	}	
+	}
 
 }

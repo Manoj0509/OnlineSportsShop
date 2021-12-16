@@ -4,12 +4,13 @@ import java.time.LocalDate;
 import javax.persistence.*;
 
 @Entity
-@SequenceGenerator(name = "Ordersequence",initialValue = 501)
+@SequenceGenerator(name = "Ordersequence", initialValue = 501)
 @Table(name = "orderss")
 public class OrderEntity {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE,generator = "Ordersequence")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Ordersequence")
+	// fields for order
 	private Long id;
 	@Column(name = "amount")
 	private Double amount;
@@ -17,11 +18,12 @@ public class OrderEntity {
 	private String productName;
 	@Column(name = "billingDate")
 	private String billingDate;
-    @Column(name = "paymentMethod")
+	@Column(name = "paymentMethod")
 	private String paymentMethod;
 	private Long custId;
-	
-	public OrderEntity(Long id, Double amount, String productName, String billingDate, String paymentMethod, Long custId) {
+
+	public OrderEntity(Long id, Double amount, String productName, String billingDate, String paymentMethod,
+			Long custId) {
 		super();
 		this.id = id;
 		this.amount = amount;
@@ -30,7 +32,6 @@ public class OrderEntity {
 		this.paymentMethod = paymentMethod;
 		this.custId = custId;
 	}
-	
 
 	public OrderEntity(Double amount, String billingDate, String paymentMethod, String productName, Long custId) {
 		super();
@@ -41,11 +42,10 @@ public class OrderEntity {
 		this.custId = custId;
 	}
 
-
 	public OrderEntity() {
 		super();
 	}
-	
+
 	public Double getAmount() {
 		return amount;
 	}
@@ -69,6 +69,7 @@ public class OrderEntity {
 	public void setPaymentMethod(String paymentMethod) {
 		this.paymentMethod = paymentMethod;
 	}
+
 	public Long getId() {
 		return id;
 	}
@@ -84,7 +85,7 @@ public class OrderEntity {
 	public void setCustId(Long custId) {
 		this.custId = custId;
 	}
-	
+
 	public String getProductName() {
 		return productName;
 	}
@@ -92,25 +93,21 @@ public class OrderEntity {
 	public void setProductName(String productName) {
 		this.productName = productName;
 	}
+
 	@Override
 	public String toString() {
 		return "OrderEntity [id=" + id + ", amount=" + amount + ", productName=" + productName + ", billingDate="
-				+ billingDate + ", paymentMethod=" + paymentMethod  + ", custId=" + custId
-				+ "]";
+				+ billingDate + ", paymentMethod=" + paymentMethod + ", custId=" + custId + "]";
 	}
-
 
 	public void setBillingDate(LocalDate parse) {
 		// TODO Auto-generated method stub
-		
-	}
 
+	}
 
 	public void setCartEntity(CartEntity cartEntity) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
-	
-	
 }
